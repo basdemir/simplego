@@ -1,4 +1,4 @@
-moduleowner = github.com/basdemir/godemo/
+moduleowner = github.com/basdemir/simplego/
 packagename = simplefrontend
 
 # Build And Development
@@ -12,10 +12,10 @@ clean:
 run:
 	@ go build -o ./build/$(packagename).bin $(moduleowner)$(packagename)/cmd/$(packagename)  && ./build/$(packagename).bin	  
 docker: 
-	@ docker build -t basdemir/godemo/$(packagename):latest .
+	@ docker build -t basdemir/simplego/$(packagename):latest .
 docker-push: 
-	@ docker build -t basdemir/godemo/$(packagename):latest . && docker push basdemir/godemo/$(packagename):latest
+	@ docker build -t basdemir/simplego/$(packagename):latest . && docker push basdemir/simplego/$(packagename):latest
 docker-run: 
-	@ docker run -p 8090:8090 -e BACKEND_URL=http://172.17.0.3:8080 basdemir/godemo/$(packagename):latest
+	@ docker run -p 8090:8090 -e BACKEND_URL=http://172.17.0.3:8080 basdemir/simplego/$(packagename):latest
 help:
 	@ echo "$$README"

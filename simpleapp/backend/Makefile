@@ -1,4 +1,4 @@
-moduleowner = github.com/basdemir/godemo/
+moduleowner = github.com/basdemir/simplego/
 packagename = simplebackend
 
 # Build And Development
@@ -12,8 +12,8 @@ clean:
 run:
 	@ go build -o ./build/$(packagename).bin $(moduleowner)$(packagename)/cmd/$(packagename)  && ./build/$(packagename).bin	 
 docker: 
-	@ docker build -t basdemir/godemo/$(packagename):latest .
+	@ docker build -t basdemir/simplego/$(packagename):latest .
 docker-push: 
-	@ make docker && docker push basdemir/godemo/$(packagename):latest
+	@ make docker && docker push basdemir/simplego/$(packagename):latest
 docker-run: 
-	@ docker run -p 8080:8080 basdemir/godemo/$(packagename):latest
+	@ docker run -p 8080:8080 basdemir/simplego/$(packagename):latest
